@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-primary font-normal;
+  }
+}
+
+@layer components {
+  /* Primary button - prefer these over re-implementing with Tailwind */
+  ._btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2.5 text-base font-medium transition hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  ._btn-primary {
+    @apply _btn bg-primary text-text-white;
+  }
+  ._btn-secondary {
+    @apply _btn bg-bg-surface border border-border-default text-text-primary hover:bg-bg-tertiary;
+  }
+  ._btn-tertiary {
+    @apply _btn bg-transparent text-primary hover:bg-primary-lightest;
+  }
+
+  /* Form inputs - design system compliant */
+  ._input {
+    @apply w-full rounded-md border border-border-default bg-bg-surface px-3 py-2 text-base text-text-primary placeholder-text-tertiary focus:border-primary focus:outline-none focus:ring-0;
+  }
+  ._label {
+    @apply text-md font-medium text-text-primary;
+  }
+}
