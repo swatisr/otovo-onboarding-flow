@@ -1,0 +1,26 @@
+{
+  "name": "otovo-onboarding-flow",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "15.x",
+    "react": "19.x",
+    "react-dom": "19.x"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/react": "19.x",
+    "@types/react-dom": "19.x",
+    "autoprefixer": "10.x",
+    "eslint": "9.x",
+    "eslint-config-next": "15.x",
+    "postcss": "8.x",
+    "tailwindcss": "3.4.x",
+    "typescript": "5.x"
+  }
+}
