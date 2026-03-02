@@ -18,9 +18,9 @@ function getDummyValue(el: HTMLInputElement | HTMLSelectElement | HTMLTextAreaEl
   }
 
   // Match by context
-  if (/\bfirst\s*name|fornavn|firstName\b/.test(combined)) return "John";
+  if (/\bfirst\s*name|fornavn|firstName\b/.test(combined)) return "Odin";
   if (/\bsurname|surname|last\s*name|etternavn\b/.test(combined)) return "Doe";
-  if (/\bemail|e-?post\b/.test(combined)) return "john.doe@example.com";
+  if (/\bemail|e-?post\b/.test(combined)) return "odin.doe@example.com";
   if (/\bphone|telefon|tel\b/.test(combined)) return "12345678";
   if (/\baddress|adresse\b/.test(combined)) return "Solarveien 1, 0274 Oslo";
   if (/\bcard\s*number|kortnummer\b/.test(combined)) return "4242 4242 4242 4242";
@@ -75,10 +75,10 @@ export default function FillFormsButton() {
       onClick={fillForms}
       title="Fill form with dummy data"
       aria-label="Fill form with dummy data"
-      className="fixed bottom-6 right-6 z-[9999] flex h-10 w-10 items-center justify-center rounded-full border border-gray-200/80 bg-white/90 shadow-sm backdrop-blur-sm transition hover:border-gray-300 hover:bg-white hover:shadow"
+      className="fixed bottom-6 right-6 z-[9999] flex h-10 w-10 items-center justify-center rounded-full border border-border-default bg-bg-surface transition hover:border-border-light hover:bg-bg-tertiary"
     >
       <svg
-        className="h-4 w-4 text-gray-500"
+        className="h-4 w-4 text-text-tertiary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

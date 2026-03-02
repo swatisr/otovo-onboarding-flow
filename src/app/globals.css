@@ -30,4 +30,21 @@
   ._label {
     @apply text-md font-medium text-text-primary;
   }
+
+  /* Alerts - inline system messages (design system) */
+  ._alert {
+    @apply rounded-md border px-4 py-3 text-sm;
+  }
+  ._alert-info {
+    @apply _alert border-border-light bg-primary-lightest text-text-primary;
+  }
+  ._alert-success {
+    @apply _alert border-status-success bg-status-success-light text-status-success-dark;
+  }
+  ._alert-warning {
+    @apply _alert border-status-warning bg-status-warning-light text-status-warning;
+  }
+  ._alert-danger {
+    @apply _alert border-border-error bg-status-error-light text-status-error;
+  }
 }

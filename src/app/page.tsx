@@ -8,7 +8,7 @@ const HERO_HEIGHT = 500;
 
 function CheckIcon() {
   return (
-    <svg className="h-5 w-5 shrink-0 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+    <svg className="h-5 w-5 shrink-0 text-status-success" fill="currentColor" viewBox="0 0 20 20">
       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
     </svg>
   );
@@ -43,23 +43,23 @@ export default function CareSignupPage() {
       <nav
         className={`sticky top-0 z-50 px-4 py-4 transition-all duration-300 md:px-8 ${
           navWhite
-            ? "border-b border-gray-200 bg-white shadow-sm"
+            ? "border-b border-border-default bg-bg-surface"
             : "bg-transparent"
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <span className={`text-xl font-semibold tracking-tight md:text-2xl ${navWhite ? "text-gray-900" : "text-white"}`}>
+            <span className={`text-xl font-semibold tracking-tight md:text-2xl ${navWhite ? "text-text-primary" : "text-text-white"}`}>
               OTOVO
             </span>
-            <span className="text-[#F97316]" aria-hidden>
+            <span className="text-secondary" aria-hidden>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="12" r="3.5" fill="currentColor" />
                 <path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
               </svg>
             </span>
           </a>
-          <div className={`hidden items-center gap-8 text-sm md:flex ${navWhite ? "text-gray-700" : "text-white"}`}>
+          <div className={`hidden items-center gap-8 text-sm md:flex ${navWhite ? "text-text-secondary" : "text-text-white"}`}>
             <button className="flex items-center gap-1 hover:opacity-90">
               Solutions
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,7 +70,7 @@ export default function CareSignupPage() {
             <a href="#" className="hover:opacity-90">About Otovo</a>
           </div>
           <button
-            className={`p-2 md:hidden ${navWhite ? "text-gray-900" : "text-white"}`}
+            className={`p-2 md:hidden ${navWhite ? "text-text-primary" : "text-text-white"}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu"
           >
@@ -80,7 +80,7 @@ export default function CareSignupPage() {
           </button>
         </div>
         {mobileMenuOpen && (
-          <div className={`mt-4 flex flex-col gap-3 border-t pt-4 md:hidden ${navWhite ? "border-gray-200 text-gray-700" : "border-white/20 text-white"}`}>
+          <div className={`mt-4 flex flex-col gap-3 border-t pt-4 md:hidden ${navWhite ? "border-border-default text-text-secondary" : "border-white/20 text-text-white"}`}>
             <button className="flex gap-1 text-left">Solutions ↓</button>
             <a href="#">Price and warranty</a>
             <a href="#">About Otovo</a>
@@ -123,19 +123,19 @@ export default function CareSignupPage() {
       </header>
 
       {/* Subscription section - card on light grey */}
-      <section className="bg-gray-100 px-4 py-16">
+      <section className="bg-bg-secondary px-4 py-16">
         <div className="mx-auto max-w-5xl">
-          <div id="form" className="overflow-hidden rounded-2xl shadow-lg">
+          <div id="form" className="overflow-hidden rounded-lg border border-border-default bg-bg-surface">
             <div className="grid lg:grid-cols-2">
               {/* Left - dark blue-grey benefits */}
-              <div className="bg-[#1A202C] p-8 md:p-10">
-                <h2 className="text-xl font-bold text-white md:text-2xl">
+              <div className="bg-surface-dark p-8 md:p-10">
+                <h2 className="text-xl font-bold text-text-white md:text-2xl">
                   Start your Otovo Care subscription
                 </h2>
-                <p className="mt-4 text-sm leading-relaxed text-white/90">
+                <p className="mt-4 text-sm leading-relaxed text-text-inverse">
                   With Otovo Care you get peace of mind from day one. We are responsible for the follow-up of your solar system and help you keep energy production going. The service is activated immediately after registration.
                 </p>
-                <h3 className="mt-8 text-center text-xs font-semibold uppercase tracking-wider text-white/80">
+                <h3 className="mt-8 text-center text-xs font-semibold uppercase tracking-wider text-text-inverse">
                   This is what you get
                 </h3>
                 <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -147,7 +147,7 @@ export default function CareSignupPage() {
                     "10% discount on inspections, repairs and upgrades performed by Otovo",
                     "Check the plant's condition and production via the inverter portal",
                   ].map((item) => (
-                    <li key={item} className="flex gap-2 text-sm text-white/90">
+                    <li key={item} className="flex gap-2 text-sm text-text-inverse">
                       <CheckIcon />
                       <span>{item}</span>
                     </li>
@@ -156,12 +156,12 @@ export default function CareSignupPage() {
               </div>
 
               {/* Right - white form */}
-              <div className="bg-white p-8 md:p-10">
+              <div className="bg-bg-surface p-8 md:p-10">
                 {/* Payment plan - radio style */}
                 <div className="flex flex-col gap-4 sm:flex-row">
                   <label
                     className={`flex flex-1 cursor-pointer flex-col rounded-lg border-2 p-4 transition ${
-                      billing === "year" ? "border-[#F97316]" : "border-gray-200 hover:border-gray-300"
+                      billing === "year" ? "border-primary" : "border-border-default hover:border-border-light"
                     }`}
                   >
                     <div className="flex items-start gap-3">
@@ -170,18 +170,18 @@ export default function CareSignupPage() {
                         name="billing"
                         checked={billing === "year"}
                         onChange={() => setBilling("year")}
-                        className="mt-1 h-4 w-4 border-gray-300 text-[#F97316] focus:ring-[#F97316]"
+                        className="mt-1 h-4 w-4 border-border-default text-primary focus:ring-primary"
                       />
                       <div className="flex-1">
-                        <span className="font-medium text-gray-900">Pay per year</span>
-                        <div className="mt-1 text-lg font-bold text-gray-900">NOK 99 /month</div>
-                        <div className="text-sm text-gray-500">Total: NOK 1188 per year</div>
+                        <span className="font-medium text-text-primary">Pay per year</span>
+                        <div className="mt-1 text-lg font-bold text-text-primary">NOK 99 /month</div>
+                        <div className="text-sm text-text-tertiary">Total: NOK 1188 per year</div>
                       </div>
                     </div>
                   </label>
                   <label
                     className={`flex flex-1 cursor-pointer flex-col rounded-lg border-2 p-4 transition ${
-                      billing === "month" ? "border-[#F97316]" : "border-gray-200 hover:border-gray-300"
+                      billing === "month" ? "border-primary" : "border-border-default hover:border-border-light"
                     }`}
                   >
                     <div className="flex items-start gap-3">
@@ -190,28 +190,28 @@ export default function CareSignupPage() {
                         name="billing"
                         checked={billing === "month"}
                         onChange={() => setBilling("month")}
-                        className="mt-1 h-4 w-4 border-gray-300 text-[#F97316] focus:ring-[#F97316]"
+                        className="mt-1 h-4 w-4 border-border-default text-primary focus:ring-primary"
                       />
                       <div className="flex-1">
-                        <span className="font-medium text-gray-900">Pay per month</span>
-                        <div className="mt-1 text-lg font-bold text-gray-900">NOK 140 /month</div>
-                        <div className="text-sm text-gray-500">Total: NOK 1680 per year</div>
+                        <span className="font-medium text-text-primary">Pay per month</span>
+                        <div className="mt-1 text-lg font-bold text-text-primary">NOK 140 /month</div>
+                        <div className="text-sm text-text-tertiary">Total: NOK 1680 per year</div>
                       </div>
                     </div>
                   </label>
                 </div>
 
                 {/* Registration fee */}
-                <div className="mt-8 flex items-center justify-between border-b border-gray-200 pb-4">
-                  <span className="text-sm text-gray-700">Registration fee</span>
-                  <span className="font-medium text-gray-900">990 kr</span>
+                <div className="mt-8 flex items-center justify-between border-b border-border-default pb-4">
+                  <span className="text-sm text-text-secondary">Registration fee</span>
+                  <span className="font-medium text-text-primary">990 kr</span>
                 </div>
-                <p className="mt-3 text-xs text-gray-500">
+                <p className="mt-3 text-xs text-text-tertiary">
                   All prices include VAT. Payment via direct debit or invoice.
                 </p>
 
                 {/* Form fields */}
-                <h3 className="mt-8 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                <h3 className="mt-8 text-xs font-semibold uppercase tracking-wider text-text-tertiary">
                   Your information
                 </h3>
                 <form
@@ -260,37 +260,37 @@ export default function CareSignupPage() {
                   }}
                 >
                   {formError && (
-                    <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700" role="alert">
+                    <div className="_alert _alert-danger" role="alert">
                       {formError}
-                    </p>
+                    </div>
                   )}
                   <label className="block">
-                    <span className="mb-1 block text-sm font-medium text-gray-700">First name</span>
+                    <span className="mb-1 block _label">First name</span>
                     <input
                       type="text"
                       placeholder="Your first name"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
-                      className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-gray-900 placeholder-gray-400"
+                      className="_input"
                     />
                   </label>
                   <label className="block">
-                    <span className="mb-1 block text-sm font-medium text-gray-700">Surname</span>
+                    <span className="mb-1 block _label">Surname</span>
                     <input
                       type="text"
                       placeholder="Your surname"
                       value={surname}
                       onChange={(e) => setSurname(e.target.value)}
-                      className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-gray-900 placeholder-gray-400"
+                      className="_input"
                     />
                   </label>
                   <label className="block">
-                    <span className="mb-1 block text-sm font-medium text-gray-700">Telephone</span>
-                    <div className="flex rounded-lg border border-gray-300">
+                    <span className="mb-1 block _label">Telephone</span>
+                    <div className="flex rounded-md border border-border-default overflow-hidden">
                       <select
                         value={phoneCountry}
                         onChange={(e) => setPhoneCountry(e.target.value)}
-                        className="rounded-l-lg border-0 bg-gray-50 px-3 py-2.5 text-gray-700"
+                        className="rounded-l-md border-0 bg-bg-tertiary px-3 py-2.5 text-text-secondary"
                       >
                         <option value="+47">🇳🇴 +47</option>
                         <option value="+46">🇸🇪 +46</option>
@@ -301,28 +301,28 @@ export default function CareSignupPage() {
                         placeholder="Your phone number"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="flex-1 rounded-r-lg border-0 px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:ring-0"
+                        className="_input flex-1 rounded-none border-0"
                       />
                     </div>
                   </label>
                   <label className="block">
-                    <span className="mb-1 block text-sm font-medium text-gray-700">Email</span>
+                    <span className="mb-1 block _label">Email</span>
                     <input
                       type="email"
                       placeholder="Your email address"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-gray-900 placeholder-gray-400"
+                      className="_input"
                     />
                   </label>
                   <label className="block">
-                    <span className="mb-1 block text-sm font-medium text-gray-700">Address</span>
+                    <span className="mb-1 block _label">Address</span>
                     <input
                       type="text"
                       placeholder="Installation address"
                       value={address}
                       onChange={(e) => setAddress(e.target.value)}
-                      className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-gray-900 placeholder-gray-400"
+                      className="_input"
                     />
                   </label>
 
@@ -331,24 +331,24 @@ export default function CareSignupPage() {
                       type="checkbox"
                       checked={termsAccepted}
                       onChange={(e) => setTermsAccepted(e.target.checked)}
-                      className="mt-1 h-4 w-4 rounded border-gray-300 text-[#F97316] focus:ring-[#F97316]"
+                      className="mt-1 h-4 w-4 rounded border-border-default text-primary focus:ring-primary"
                     />
-                    <span className="text-sm text-gray-700">
+                    <span className="text-sm text-text-primary">
                       I confirm that I have read and understood the terms and conditions of Otovo Care.
                     </span>
                   </label>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-text-tertiary">
                     By selecting this option, I accept the{" "}
-                    <a href="#" className="text-gray-600 underline hover:text-gray-900">general terms and conditions</a>{" "}
+                    <a href="#" className="text-text-secondary underline hover:text-text-primary">general terms and conditions</a>{" "}
                     in the version applicable at the time of conclusion of the agreement. I have read the{" "}
-                    <a href="#" className="text-gray-600 underline hover:text-gray-900">withdrawal form, cancellation guidelines</a>{" "}
+                    <a href="#" className="text-text-secondary underline hover:text-text-primary">withdrawal form, cancellation guidelines</a>{" "}
                     and the{" "}
-                    <a href="#" className="text-gray-600 underline hover:text-gray-900">privacy policy</a>.
+                    <a href="#" className="text-text-secondary underline hover:text-text-primary">privacy policy</a>.
                   </p>
 
                   <button
                     type="submit"
-                    className="w-full rounded-lg bg-gray-600 py-3.5 font-medium text-white transition hover:bg-gray-700"
+                    className="_btn _btn-primary w-full py-3.5"
                   >
                     Complete order
                   </button>
