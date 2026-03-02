@@ -20,8 +20,11 @@ export default function CheckoutSuccessPage() {
 
   if (!data) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-bg-primary">
+      <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-bg-primary">
         <p className="text-text-secondary">Loading…</p>
+        <p className="text-sm text-text-tertiary">
+          Complete checkout to see your card. Or refresh after visiting /checkout.
+        </p>
       </div>
     );
   }

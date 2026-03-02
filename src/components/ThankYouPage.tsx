@@ -5,7 +5,7 @@ import MetallicMembershipCard from "@/components/MetallicMembershipCard";
 export default function ThankYouPage() {
   return (
     <div
-      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-4"
       style={{
         background:
           "linear-gradient(180deg, #f9f9fc 0%, #f7f7fa 50%, #f9f9fc 100%)",
@@ -34,26 +34,42 @@ export default function ThankYouPage() {
         aria-hidden
       />
 
-      {/* Centered content container */}
-      <div className="relative z-10 mx-auto flex w-full max-w-[1200px] flex-col items-stretch gap-12 px-8 py-16 md:flex-row md:items-center md:gap-16 md:px-12 md:py-20 lg:gap-24 lg:px-16">
-        {/* Left column */}
-        <div className="flex flex-1 flex-col justify-center md:py-12">
+      {/* Two columns: left = thank you, right = card + text block stacked */}
+      <div className="relative z-10 mx-auto flex w-full max-w-[1000px] flex-col gap-12 px-6 py-16 md:flex-row md:items-center md:gap-16 md:px-8 md:py-20 lg:gap-20">
+        {/* Left column - thank you message */}
+        <div className="flex flex-1 flex-col justify-center">
           <h1 className="text-4xl font-semibold tracking-tight text-text-primary md:text-5xl lg:text-[3.5rem]">
-            You&apos;re All Set
+            Thank you for subscribing
           </h1>
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-text-secondary">
-            Your subscription is confirmed. We&apos;ll be in touch shortly to help you get started.
-          </p>
         </div>
 
-        {/* Right column - metallic membership card */}
-        <div
-          className="flex min-h-[320px] flex-1 items-center justify-center rounded-2xl p-8 md:min-h-[400px]"
-          style={{
-            background: "linear-gradient(160deg, #1a1f2e 0%, #0f1218 100%)",
-          }}
-        >
-          <MetallicMembershipCard />
+        {/* Right column - card + text block stacked vertically */}
+        <div className="flex flex-1 flex-col gap-8">
+          <div className="flex justify-center md:justify-start">
+            <MetallicMembershipCard />
+          </div>
+          <div className="flex flex-col gap-6">
+            <h2 className="text-2xl font-semibold tracking-tight text-text-primary md:text-3xl">
+              Lorem ipsum dolor sit amet consectetur
+            </h2>
+            <p className="max-w-md text-base leading-relaxed text-text-secondary">
+              Lorem ipsum dolor sit amet consectetur. Eget id mattis massa magnis nec pharetra enim blandit. Urna malesuada elementum aenean aenean nam tristique in.
+            </p>
+            <div className="flex flex-col gap-4">
+              <button
+                type="button"
+                className="inline-flex w-fit items-center justify-center rounded-lg bg-secondary px-6 py-3 text-base font-medium text-white transition hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
+              >
+                Button text
+              </button>
+              <button
+                type="button"
+                className="w-fit text-base font-medium text-text-primary hover:underline focus:outline-none"
+              >
+                Remind me later
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
